@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;           
+    background: linear-gradient(135deg, #0c0c0c 0%, #392a47 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);       
+    border-radius: 20px;
+    padding: 2.5rem 1.8rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e0e0e0;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    background: linear-gradient(90deg, #a78bfa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d0d0d0;
+}
+
+input {
+    padding: 14px;
+    font-size: 1.25rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#startBtn {
+    background: linear-gradient(90deg, #a78bfa, #c084fc);
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#startBtn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(167, 139, 250, 0.35);
+}
+
+.results-container {
+    max-height: 360px;
+    overflow-y: auto;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(30, 30, 50, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    text-align: right;
+}
+
+.number-item {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 14px 18px;
+    margin: 12px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+.number-item:nth-child(1) { animation-delay: 0.1s; }
+.number-item:nth-child(2) { animation-delay: 0.2s; }
+.number-item:nth-child(3) { animation-delay: 0.3s; }
+.number-item:nth-child(4) { animation-delay: 0.4s; }
+.number-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.number-item:hover {
+    transform: translateX(-6px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(167, 139, 250, 0.4);
+}
+
+.copy-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d0d0d0;
+    transition: all 0.25s ease;
+}
+
+.copy-btn:hover {
+    background: rgba(167, 139, 250, 0.25);
+    color: white;
+    transform: scale(1.15);
+}
+
+.copy-all-btn {
+    background: linear-gradient(90deg, #10b981, #34d399);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.15rem;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.copy-all-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.35);
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #10b981;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-15px);
+}
+
+
+.results-container::-webkit-scrollbar {
+    width: 8px;
+}
+.results-container::-webkit-scrollbar-track {
+    background: rgba(30, 30, 50, 0.6);
+    border-radius: 10px;
+}
+.results-container::-webkit-scrollbar-thumb {
+    background: #a78bfa;
+    border-radius: 10px;
+}
+.results-container::-webkit-scrollbar-thumb:hover {
+    background: #c084fc;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 2rem 1.4rem;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group {
+        gap: 1rem;
+    }
+
+    input {
+        font-size: 1.15rem;
+        padding: 12px;
+    }
+
+    #startBtn {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+    }
+
+    .results-container {
+        max-height: 320px;
+        padding: 0.8rem;
+    }
+
+    .number-item {
+        font-size: 1.1rem;
+        padding: 12px 15px;
+    }
+
+    .copy-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .copy-all-btn {
+        font-size: 1.05rem;
+        padding: 12px 24px;
+    }
+
+    .toast {
+        bottom: 20px;
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+}
